@@ -1,7 +1,96 @@
+:root {
+  --primary-color: #fff;
+  --secondary-color: #fff;
+}
+
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1.6rem;
+}
+
+/* Common */
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1218px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 118px;
+  height: 50px;
+  padding: 0 16px;
+  border-radius: 24.5px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #171100;
+}
+
+/* Header */
+.header {
+  background-color: #fffcf4;
+}
+
+.fixed {
+  position: sticky;
+  top: -28px;
+}
+
+.header .body {
+  display: flex;
+  align-items: center;
+  padding: 36px 0 8px;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav ul {
+  display: flex;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.nav li a {
+  display: inline-block;
+  padding: 2px 21px;
+  color: #5f5b53;
+}
+
+.nav li.active a,
+.nav li:hover a {
+  position: relative;
+  text-shadow: 1px 0 0 currentColor;
+  color: #171100;
+}
+
+.nav li.active a::after {
+  position: absolute;
+  bottom: 1px;
+  left: 22px;
+  content: "";
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: currentColor;
+}
+
+.header .sign-up-btn {
+  min-width: 144px;
+  margin-left: 49px;
 }
