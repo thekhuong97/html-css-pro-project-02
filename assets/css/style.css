@@ -1,6 +1,9 @@
 :root {
-  --primary-color: #fff;
-  --secondary-color: #fff;
+  --primary-color: #ffb900;
+  /* --secondary-color: #fff; */
+  --font-heading: "Sen", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 html {
@@ -28,16 +31,54 @@ a {
 }
 
 .btn {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   min-width: 118px;
   height: 50px;
   padding: 0 16px;
-  border-radius: 24.5px;
+  border-radius: 999px;
   font-weight: 600;
   color: #fff;
   background-color: #171100;
+  transition: background-color ease-in-out 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #171100;
+}
+
+.heading.lv1 {
+  font-size: 5.8rem;
+  line-height: 1.17;
+}
+
+.heading.lv2 {
+  font-size: 3.8rem;
+  line-height: 1.26;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp.line-2 {
+  --line-clamp: 2;
+}
+
+.word-break-all {
+  word-break: break-all;
 }
 
 /* Header */
@@ -48,6 +89,7 @@ a {
 .fixed {
   position: sticky;
   top: -28px;
+  z-index: 1;
 }
 
 .header .body {
@@ -93,4 +135,281 @@ a {
 .header .sign-up-btn {
   min-width: 144px;
   margin-left: 49px;
+}
+
+/* Hero */
+.hero {
+  padding-top: 56px;
+  padding-bottom: 65px;
+  background-color: #fffcf4;
+}
+
+.hero .body {
+  display: flex;
+}
+
+/* Hero Left */
+.hero .media-block {
+  position: relative;
+  width: 48%;
+}
+
+.hero .media-block .img {
+  max-width: 470px;
+  height: auto;
+  border-radius: 20px;
+  aspect-ratio: 94 / 137;
+  object-fit: cover;
+}
+
+.hero-summary {
+  position: absolute;
+  bottom: 48px;
+  right: 0;
+  width: 270px;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.05);
+}
+
+.hero-summary .item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-summary .item + .item {
+  margin-top: 14px;
+}
+
+.hero-summary .item:nth-child(1) .icon {
+  background-color: #fff9e8;
+}
+
+.hero-summary .item:nth-child(2) .icon {
+  background-color: #fcefff;
+}
+
+.hero-summary .item:nth-child(3) .icon {
+  background-color: #ebeaff;
+}
+
+.hero-summary .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.hero-summary .label {
+  font-size: 1.4rem;
+  color: #5f5b53;
+}
+
+.hero-summary .title {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #171100;
+}
+
+/* Hero Right */
+.hero .content-block {
+  width: 52%;
+  padding-top: 64px;
+  padding-left: 130px;
+}
+
+.hero .desc {
+  margin-top: 22px;
+  font-size: 1.8rem;
+  line-height: 1.67;
+  color: #5f5b53;
+}
+
+.hero .cta-group {
+  display: flex;
+  align-items: center;
+  margin-top: 38px;
+  margin-bottom: 48px;
+}
+
+.hero-cta {
+  min-width: 180px;
+  height: 64px;
+  font-size: 1.8rem;
+  background-color: var(--primary-color);
+}
+
+.hero .watch-video {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 28px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.hero .watch-video .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.07);
+}
+
+.hero .watch-video span {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #171100;
+}
+
+.hero .stats {
+  margin-top: 8px;
+  margin-left: -28px;
+}
+
+.hero .stats strong {
+  margin-right: 14px;
+  margin-left: 28px;
+  font-family: var(--font-heading);
+  font-size: 4.4rem;
+  font-weight: 700;
+  color: #171100;
+}
+
+/* Popular */
+.popular {
+  margin-top: 135px;
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.popular-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popular-top .desc {
+  max-width: 458px;
+  margin-top: 16px;
+  font-size: 1.8rem;
+  line-height: 1.67;
+  color: #5f5b53;
+}
+
+.popular-top .controls {
+  display: flex;
+  gap: 18px;
+}
+
+.popular-top .control-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+}
+
+.popular-top .control-btn:hover {
+  color: #fff;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.popular .course-list {
+  display: flex;
+  gap: 30px;
+  margin-top: 55px;
+}
+
+.popular .course-item {
+  flex: 1;
+  border: 1px solid #e2dfda;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.popular .course-item:hover {
+  border-color: transparent;
+  box-shadow: 0px 18px 36px rgba(0, 0, 0, 0.05);
+}
+
+.popular .course-item .thumb {
+  width: 370px;
+  height: auto;
+  aspect-ratio: 185 / 139;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.popular .course-item .info {
+  padding: 16px 22px 22px;
+}
+
+.popular .course-item .head {
+  display: flex;
+}
+
+.popular .course-item .head,
+.popular .course-item .foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popular .course-item .title a {
+  padding-right: 8px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67;
+  color: #171100;
+}
+
+.popular .course-item .rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.popular .rating {
+  color: #fea31b;
+}
+
+.popular .course-item .desc {
+  margin-top: 6px;
+  font-size: 1.4rem;
+  line-height: 1.86;
+  color: #5f5b53;
+}
+
+.popular .course-item .foot {
+  margin-top: 12px;
+}
+
+.popular .course-item .price {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #171100;
+}
+
+.popular .course-item .book-btn {
+  font-size: 1.4rem;
+  border: none;
+}
+
+.popular .course-item .book-btn:hover {
+  background-color: var(--primary-color);
 }
